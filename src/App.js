@@ -1,26 +1,49 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Reports from './views/reports';
+import Helper from './views/helper';
+import styled from 'styled-components';
+import ReportDetail from './views/reportdetail';
 
-function App() {
+const Navigation = styled.nav`
+  background-color: #fc9f1c;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.8rem;
+  font-weight: bold;
+  ul {
+    display: flex;
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    padding: 1rem;
+    color: white;
+  }
+`;
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Navigation>
+          <ul>
+            <li>
+              <Link to='/reports'>Reports</Link>
+            </li>
+            <li>
+              <Link to='/helper'>My reports</Link>
+            </li>
+          </ul>
+        </Navigation>
+        <Switch>
+          <Route exact path='/reports' component={Reports}></Route>
+          <Route exact path='/reports' component={Reports}></Route>
+          <Route path='/helper' component={Helper}></Route>
+          <Route exact path='/reports/:id' component={ReportDetail}></Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
-
-export default App;
