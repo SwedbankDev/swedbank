@@ -13,7 +13,7 @@ import java.util.Random;
 public class RestServiceController {
     @GetMapping("/status")
     public String hello() {
-        return "OK";
+        return "OK_____";
     }
 
     @GetMapping(value = "/getCaseList",produces = "application/json")
