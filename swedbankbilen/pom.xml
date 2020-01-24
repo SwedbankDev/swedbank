@@ -58,15 +58,21 @@
         <version>1.8.0</version>  
         <configuration> 
           <schemaVersion>V2</schemaVersion>  
-          <resourceGroup>swedbankbilen-1579858927911-rg</resourceGroup>  
-          <appName>swedbankbilen-1579858927911</appName>  
+          <resourceGroup>appsvc_linux_centralus</resourceGroup>
+          <appName>swedbankbackend</appName>
           <pricingTier>P1v2</pricingTier>  
-          <region>westeurope</region>  
+          <region>Central US</region>
           <runtime> 
             <os>linux</os>
             <javaVersion>java11</javaVersion>
             <webContainer>java11</webContainer>
-          </runtime>  
+          </runtime>
+          <appSettings>
+            <property>
+              <name>JAVA_OPTS</name>
+              <value>-Dserver.port=80</value>
+            </property>
+          </appSettings>
           <deployment> 
             <resources> 
               <resource> 
