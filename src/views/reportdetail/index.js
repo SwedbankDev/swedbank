@@ -1,7 +1,7 @@
-import React from 'react';
-import Form from './components/form';
-import styled from 'styled-components';
-import googleMap from '../../images/googleMapsImage.png';
+import React from "react";
+import Form from "./components/form";
+import styled from "styled-components";
+import googleMap from "../../images/googleMapsImage.png";
 
 const Container = styled.div`
   height: 100vh;
@@ -21,12 +21,12 @@ export default class ReportDetail extends React.Component {
     return (
       <Container>
         <Header>
-          <h2>
-            Report{' '}
+          <h1>
+            Report{" "}
             {this.props.match.params.id && !isNaN(this.props.match.params.id)
               ? `#${this.props.match.params.id}`
-              : ''}
-          </h2>
+              : ""}
+          </h1>
         </Header>
         <Form />
       </Container>

@@ -1,41 +1,46 @@
-import React from 'react';
-import styled from 'styled-components';
-import googleMap from '../../../../images/googleMapsImage.png';
-import chat from '../../../../images/chat.png';
+import React from "react";
+import styled from "styled-components";
+import googleMap from "../../../../images/googleMapsImage.png";
+import chat from "../../../../images/chat.png";
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 65% 35%;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 15rem;
 `;
 
-const ColumnWrapper = styled.div.attrs(props => ({
-  marginleft: props.marginLeft || 0
-}))`
+const ColumnWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: ${props => props.marginleft};
 `;
 
 const Img = styled.img`
-  max-width: 300px;
   max-height: 300px;
-  margin-bottom: 1rem;
 `;
 
 export default class Form extends React.Component {
   render() {
     return (
       <Container>
-        <ColumnWrapper marginLeft={'10%'}>
-          <label htmlFor='category'>Category:</label>
-          <div>Text</div>
-          <label htmlFor='Details'>Details:</label>
-          <div>Lorem ipsum</div>
-        </ColumnWrapper>
         <ColumnWrapper>
-          <Img src={googleMap} alt='gm'></Img>
-          <Img src={chat} alt='chat'></Img>
+          <h3>Information</h3>
+          <div>
+            <label htmlFor="category">Category:</label>
+            <div>Text</div>
+          </div>
+          <div>
+            <label htmlFor="Details">Details:</label>
+            <div>Lorem ipsum</div>
+          </div>
         </ColumnWrapper>
+        <div>
+          <h3>Location of car</h3>
+          <Img src={googleMap} alt="gm" />
+        </div>
+        <div>
+          <h3>Ongoing chat</h3>
+          <Img src={chat} alt="chat" />
+        </div>
       </Container>
     );
   }
