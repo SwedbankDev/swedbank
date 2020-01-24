@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Container } from "../../components/layout";
 
-const Helper = () => <div></div>;
+const Helper = () => <Container>Hej</Container>;
 
 export default Helper;

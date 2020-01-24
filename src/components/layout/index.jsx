@@ -7,4 +7,6 @@ const ContainerComponent = styled.div`
   grid-template-rows: 20% auto;
 `;
 
-export const Container = () => <ContainerComponent></ContainerComponent>;
+export const Container = props => (
+  <ContainerComponent>{props.children}</ContainerComponent>
+);

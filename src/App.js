@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./views/home";
 import Reports from "./views/reports";
+import Helper from "./views/helper";
 import styled from "styled-components";
 
 const Navigation = styled.nav`
@@ -34,6 +35,7 @@ export default function App() {
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route path="/reports" component={Reports}></Route>
+          <Route path="/helper" component={Helper}></Route>
         </Switch>
       </div>
     </Router>
